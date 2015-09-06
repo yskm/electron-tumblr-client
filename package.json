@@ -4,7 +4,7 @@
   "description": "a sample app using electron.",
   "main": "main.js",
   "scripts": {
-    "package": "electron-packager ./ electron-sample  --platform=darwin,linux,win32 --arch=x64 --version=0.31.2 --out=pkgs/v0.1.0",
+    "package": "electron-packager ./ electron-sample  --platform=darwin,linux,win32 --arch=x64 --version=0.31.2 --out=pkgs/v0.1.0 --ignore=pkgs/*",
     "upload": "ghr v0.1.0 pkgs/v0.1.0",
     "zip": "npm run zip-darwin && npm run zip-linux && npm run zip-win32",
     "zip-darwin": "cd pkgs/v0.1.0 && zip -r electron-sample-darwin-x64.zip electron-sample-darwin-x64",
