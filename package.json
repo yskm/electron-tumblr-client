@@ -1,7 +1,7 @@
 {
-  "name": "electron-sample",
+  "name": "electron-tumblr-client",
   "version": "0.1.0",
-  "description": "a sample app using electron.",
+  "description": "A desktop client application for Tumblr. This is built on Electron.",
   "main": "main.js",
   "scripts": {
     "package": "electron-packager ./ electron-sample  --platform=darwin,linux,win32 --arch=x64 --version=0.31.2 --out=pkgs/v0.1.0 --ignore=pkgs/*",
