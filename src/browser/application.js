@@ -17,7 +17,7 @@ class Application {
     });
 
     app.on('ready', function() {
-      mainWindow = new BrowserWindow({width: 1000, height: 600});
+      mainWindow = new BrowserWindow({width: 1000, height: 800});
       mainWindow.loadUrl('file://' + mainWindowPath);
       mainWindow.on('closed', function() {
         mainWindow = null;
