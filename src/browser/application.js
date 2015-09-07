@@ -2,8 +2,8 @@
 
 var app = require('app');
 var BrowserWindow = require('browser-window');
-
 var path = require('path');
+var mainWindowPath = path.resolve(__dirname, "..", "renderer", "index.html");
 
 class Application {
   constructor() {
@@ -18,9 +18,7 @@ class Application {
 
     app.on('ready', function() {
       mainWindow = new BrowserWindow({width: 1000, height: 600});
-      var WindowPath = path.resolve(__dirname, "..", "renderer", "index.html");
-      console.log(WindowPath);
-      mainWindow.loadUrl('file://' + WindowPath);
+      mainWindow.loadUrl('file://' + mainWindowPath);
       mainWindow.on('closed', function() {
         mainWindow = null;
       });
