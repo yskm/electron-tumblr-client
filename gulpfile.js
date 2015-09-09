@@ -16,3 +16,9 @@ gulp.task('build-js', ['build-copy'], function() {
     .pipe(babel())
     .pipe(gulp.dest('dist'))
 });
+
+gulp.task('dev', function() {
+  return gulp.watch('src/**/*', [
+    'build'
+  ]);
+});
