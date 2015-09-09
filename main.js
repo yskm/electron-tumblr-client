@@ -1,2 +1,2 @@
-var Application = require('./src/browser/application');
+var Application = require('./dist/browser/application');
 new Application();
