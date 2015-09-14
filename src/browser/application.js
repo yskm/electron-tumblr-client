@@ -1,15 +1,14 @@
-'use strict';
+import app from 'app';
+import BrowserWindow from 'browser-window';
+import path from 'path';
 
-var app = require('app');
-var BrowserWindow = require('browser-window');
-var path = require('path');
-var mainWindowPath = path.resolve(__dirname, "..", "renderer", "index.html");
+const mainWindowPath = path.resolve(__dirname, "..", "renderer", "index.html");
 
-class Application {
+export default class Application {
   constructor() {
     require('crash-reporter').start();
 
-    var mainWindow = null;
+    let mainWindow = null;
 
     app.on('window-all-closed', function() {
       if (process.platform != 'darwin')
@@ -18,12 +17,10 @@ class Application {
 
     app.on('ready', function() {
       mainWindow = new BrowserWindow({width: 1000, height: 800});
-      mainWindow.loadUrl('file://' + mainWindowPath);
+      mainWindow.loadUrl(`file://${mainWindowPath}`);
       mainWindow.on('closed', function() {
         mainWindow = null;
       });
     });
   }
 }
-
-module.exports = Application;
