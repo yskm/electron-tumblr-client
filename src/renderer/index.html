@@ -4,14 +4,22 @@
     <title>electron-tumblr-client</title>
     <link rel="stylesheet" href="../../node_modules/purecss/build/pure-min.css">
     <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css" charset="utf-8">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <link rel="stylesheet" href="stylesheets/index.css">
   </head>
   <body>
-    <div id="example"></div>
-    <p>
-      Under Construction
-    </p>
-    <button class="pure-button pure-button-primary"><i class="fa fa-retweet"></i></button>
+    <header class="menu">
+      <button class="pure-button pure-button-primary">
+        <i class="fa fa-bars"></i>
+      </button>
+    </header>
+    <section class="main">
+      <ul>
+        <li>
+          <article id="example" class="post"></article>
+        </li>
+      </ul>
+    </section>
     <script src="./main.js"></script>
   </body>
 </html>
