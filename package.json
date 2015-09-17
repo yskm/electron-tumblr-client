@@ -16,9 +16,9 @@
   "license": "MIT",
   "dependencies": {
     "babel": "^5.8.23",
-    "font-awesome": "^4.4.0",
     "purecss": "^0.6.0",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "semantic-ui-css": "^2.1.4"
   },
   "devDependencies": {
     "electron-packager": "^5.0.2",

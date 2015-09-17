@@ -2,23 +2,35 @@
 <html>
   <head>
     <title>electron-tumblr-client</title>
-    <link rel="stylesheet" href="../../node_modules/purecss/build/pure-min.css">
-    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css" charset="utf-8">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="../../node_modules/semantic-ui-css/semantic.min.css">
     <link rel="stylesheet" href="stylesheets/index.css">
   </head>
   <body>
-    <header class="menu">
-      <button class="pure-button pure-button-primary">
-        <i class="fa fa-bars"></i>
-      </button>
+    <header>
+      <div class="ui vertical icon menu">
+        <a class="ui item" href="#">
+          <i class="sidebar icon"></i>
+        </a>
+      </div>
     </header>
     <section class="main">
-      <ul>
-        <li>
-          <article id="example" class="post"></article>
-        </li>
-      </ul>
+      <div class="posts ui cards">
+        <article class="post ui card">
+          <div id="example" class="content">
+          </div>
+          <div class="extra content">
+            <span class="right floated">
+              <a href="#">
+                <i class="retweet icon"></i>
+              </a>
+              <a href="#">
+                <i class="heart icon"></i>
+              </a>
+            </span>
+          </div>
+        </article>
+      </div>
     </section>
     <script src="./main.js"></script>
   </body>

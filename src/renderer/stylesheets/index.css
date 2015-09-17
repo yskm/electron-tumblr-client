@@ -1,28 +1,8 @@
-/* customize pure.css */
-.pure-button-primary {
-  background: #FFF;
-  color: #36465d;
-}
-
-/* original */
-* {
-  box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-}
-a:hover,
-a:focus {
-    text-decoration: underline;
-}
-
-ul {
-  list-style: none;
+.ui.card, .ui.cards>.card {
+  width: 100%;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   background: #f5f5f5;
 }
 
@@ -30,14 +10,14 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-}
-
-article {
-  background: #FFF;
+  margin: 1.75em;
 }
 
 .main {
-  text-align: center;
   width: 540px;
   margin: auto;
+}
+
+.main > .posts {
+  margin-top: 0.875em;
 }
