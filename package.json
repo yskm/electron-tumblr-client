@@ -1,15 +1,15 @@
 {
   "name": "electron-tumblr-client",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A desktop client application for Tumblr. This is built on Electron.",
   "main": "main.js",
   "scripts": {
-    "package": "electron-packager ./ electron-tumblr-client --platform=darwin,linux,win32 --arch=x64 --version=0.31.2 --out=pkgs/v0.1.1 --ignore=pkgs/*",
-    "upload": "ghr v0.1.1 pkgs/v0.1.1",
+    "package": "electron-packager ./ electron-tumblr-client --platform=darwin,linux,win32 --arch=x64 --version=0.31.2 --out=pkgs/v0.1.2 --ignore={src,pkgs}/*",
+    "upload": "ghr v0.1.2 pkgs/v0.1.2",
     "zip": "npm run zip-darwin && npm run zip-linux && npm run zip-win32",
-    "zip-darwin": "cd pkgs/v0.1.1 && zip -r electron-tumblr-client-darwin-x64.zip electron-tumblr-client-darwin-x64",
-    "zip-linux": "cd pkgs/v0.1.1 && zip -r electron-tumblr-client-linux-x64.zip electron-tumblr-client-linux-x64",
-    "zip-win32": "cd pkgs/v0.1.1 && zip -r electron-tumblr-client-win32-x64.zip electron-tumblr-client-win32-x64"
+    "zip-darwin": "cd pkgs/v0.1.2 && zip -r electron-tumblr-client-darwin-x64.zip electron-tumblr-client-darwin-x64",
+    "zip-linux": "cd pkgs/v0.1.2 && zip -r electron-tumblr-client-linux-x64.zip electron-tumblr-client-linux-x64",
+    "zip-win32": "cd pkgs/v0.1.2 && zip -r electron-tumblr-client-win32-x64.zip electron-tumblr-client-win32-x64"
   },
   "keywords": [],
   "author": "yskm",
