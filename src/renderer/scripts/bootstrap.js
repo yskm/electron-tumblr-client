@@ -1,6 +1,7 @@
+import HeaderNav from './components/header-nav';
 import React from 'react';
 
 React.render(
-  <p>Hello, world!</p>,
-  document.getElementById('example')
+  <HeaderNav />,
+  document.getElementById('header')
 );
