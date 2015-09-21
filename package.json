@@ -16,9 +16,11 @@
   "license": "MIT",
   "dependencies": {
     "babel": "^5.8.23",
+    "oauth": "^0.9.13",
     "purecss": "^0.6.0",
     "react": "^0.13.3",
-    "semantic-ui-css": "^2.1.4"
+    "semantic-ui-css": "^2.1.4",
+    "tumblr.js": "0.0.5"
   },
   "devDependencies": {
     "electron-packager": "^5.0.2",

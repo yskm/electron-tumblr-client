@@ -15,9 +15,29 @@ header {
 
 .main {
   width: 540px;
+  height: 100%;
   margin: auto;
 }
 
-.main > .posts {
+.main>.posts {
   margin-top: 0.875em;
+}
+
+.main>.signin {
+  height: 100%;
+  position: relative;
+}
+
+.main>.signin>.signin-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.main>.signin>.ui.vertical.icon.menu {
+  height: 47px;
+  width: 60px;
 }

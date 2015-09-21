@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>electron-tumblr-client</title>
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="../../node_modules/semantic-ui-css/semantic.min.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
+  </head>
+  <body>
+    <section class="main">
+      <div class="signin">
+        <div class="signin-icon ui vertical icon menu" onclick="ipc.send('start-auth');">
+          <a class="ui item" href="#">
+            <i class="large sign in icon"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <script>
+      var ipc = require('ipc');
+    </script>
+  </body>
+</html>
