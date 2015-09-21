@@ -9,12 +9,15 @@
   <body>
     <section class="main">
       <div class="signin">
-        <div class="signin-icon ui vertical icon menu">
+        <div class="signin-icon ui vertical icon menu" onclick="ipc.send('start-auth');">
           <a class="ui item" href="#">
             <i class="large sign in icon"></i>
           </a>
         </div>
       </div>
     </section>
+    <script>
+      var ipc = require('ipc');
+    </script>
   </body>
 </html>

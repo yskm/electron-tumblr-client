@@ -1,6 +1,6 @@
 import path from 'path';
+import ipc from 'ipc';
 import BrowserWindow from 'browser-window';
-import tumblr from 'tumblr.js';
 import {OAuth} from 'oauth';
 
 export default class authWindow {
@@ -13,7 +13,7 @@ export default class authWindow {
       consumerKey,
       consumerSecret,
       '1.0',
-      'http://example.com/',
+      'http://localhost/',
       'HMAC-SHA1'
     );
   }
@@ -25,5 +25,52 @@ export default class authWindow {
     this.window.on('closed', function() {
       this.window = null;
     });
+
+    return new Promise(this.registerAuthCallback.bind(this));
+  }
+
+  registerAuthCallback(resolve, reject) {
+    ipc.on('start-auth', () => {
+      this.auth.getOAuthRequestToken((err, oauthToken, oauthTokenSecret, results) => {
+        if (err) {
+          console.log(err);
+          reject();
+          return;
+        }
+
+        this.window.webContents.on('will-navigate', (event, url) => {
+          event.preventDefault();
+          const matched = url.match(/\?oauth_token=([^&#]*)&oauth_verifier=([^&#]*)/);
+          if (matched === null) {
+            reject();
+            return;
+          }
+
+          this.auth.getOAuthAccessToken(
+            oauthToken,
+            oauthTokenSecret,
+            matched[2],
+            (err, oauthAccessToken, oauthAccessTokenSecret, results) => {
+              if (err) {
+                console.log(err);
+                reject();
+                return;
+              }
+
+              resolve({
+                accessToken: oauthAccessToken,
+                accessTokenSecret: oauthAccessTokenSecret
+              });
+            }
+          );
+        });
+
+        this.window.loadUrl(`http://www.tumblr.com/oauth/authorize?oauth_token=${oauthToken}`);
+      });
+    });
+  }
+
+  close() {
+    this.window.close();
   }
 }
